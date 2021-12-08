@@ -1,0 +1,1 @@
+# Terraform code for creating VPC, subnets, route tables, igw, nat , alb, rds and instances.
