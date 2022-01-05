@@ -18,15 +18,6 @@ variable "vpc_id" {
   type        = string
 }
 
-######################## TG attachement ################################
-variable "target_instance_count" {
-  description = "Count of targets for attachment."
-  type        = number
-}
-variable "target_ids" {
-  description = "IDs of targets for attachment."
-  type        = list(string)
-}
 ######################## ALB SG ################################
 variable "security_group_name" {
   type        = string
@@ -41,4 +32,10 @@ variable "tags" {
   default = {
     ManagedBy = "Terraform"
   }
+}
+################### prefix tag ##############
+variable "prefix" {
+  type        = string
+  description = "env prefix for name tag"
+  default     = ""
 }

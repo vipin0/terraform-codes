@@ -41,16 +41,11 @@ variable "db_password" {
   sensitive   = true
 }
 
-
-##################### ssh public key location ####################
-
-variable "public_key_path" {
-  description = "Path of public key"
-  type        = string
-  sensitive   = true
-}
-variable "private_key_path" {
-  description = "Path of private key"
-  type        = string
-  sensitive   = true
+###################### Tags ################
+variable "additonal_tags" {
+  type        = map(any)
+  description = "Addtional Tags for resources."
+  default = {
+    "ManagedBy" = "Terraform"
+  }
 }

@@ -5,7 +5,12 @@
 resource "aws_db_subnet_group" "db_subnet_group" {
   name       = var.subnet_group_name
   subnet_ids = var.subnet_ids
-  tags = var.tags
+  tags = merge(
+    var.tags,
+    {
+      "Name" : "${var.prefix}DatabaseSubnetGroup"
+    }
+  )
 }
 # -------------------------------------------------------------#
 #                    RDS Instances                             #
@@ -16,6 +21,7 @@ resource "aws_db_instance" "my_rds" {
   engine                 = var.engine
   engine_version         = var.engine_version
   instance_class         = var.db_instance_class
+  multi_az               = var.multi_az
   name                   = var.db_name
   username               = var.db_username
   password               = var.db_password
@@ -24,7 +30,12 @@ resource "aws_db_instance" "my_rds" {
   vpc_security_group_ids = [aws_security_group.db_sg.id]
   skip_final_snapshot    = true
 
-  tags = var.tags
+  tags = merge(
+    var.tags,
+    {
+      "Name" : "${var.prefix}RDSDatabase"
+    }
+  )
 }
 
 #################### RDS SG ##########################
@@ -44,5 +55,10 @@ resource "aws_security_group" "db_sg" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
-  tags = var.tags
+  tags = merge(
+    var.tags,
+    {
+      "Name" : "${var.prefix}DatabaseSecurityGroup"
+    }
+  )
 }

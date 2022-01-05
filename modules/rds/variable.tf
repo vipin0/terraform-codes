@@ -19,29 +19,34 @@ variable "identifier" {
 variable "allocated_storage" {
   type        = number
   description = "Stoage for RDS."
-  default = 10
+  default     = 10
 }
 variable "engine" {
   type        = string
   description = "Database Engine."
-  default = "mysql"
+  default     = "mysql"
 }
 variable "engine_version" {
   type        = string
   description = "Database Engine Version."
-  default = "5.7"
+  default     = "5.7"
 }
 variable "parameter_group_name" {
   type        = string
   description = "Database parameter group name."
-  default = "default.mysql5.7"
+  default     = "default.mysql5.7"
 }
 variable "db_instance_class" {
   type        = string
   description = "Instance type / size for RDS."
-  default = "db.t3.micro"
+  default     = "db.t3.micro"
 }
 
+variable "multi_az" {
+  type        = bool
+  description = "Multi Az database"
+  default     = false
+}
 variable "db_name" {
   description = "Database name"
   type        = string
@@ -73,19 +78,19 @@ variable "allowed_cidrs" {
   description = "Allowed cidr block through RDS SG."
 }
 variable "from_port" {
-  type = number
+  type        = number
   description = "from_port for DB."
-  default = 3306
+  default     = 3306
 }
 variable "to_port" {
-  type = number
+  type        = number
   description = "to_port for DB."
-  default = 3306
+  default     = 3306
 }
 variable "protocol" {
-  type = string
+  type        = string
   description = "protocol"
-  default = "tcp"
+  default     = "tcp"
 }
 ########################## Tags ###########################
 variable "tags" {
@@ -94,4 +99,11 @@ variable "tags" {
   default = {
     ManagedBy = "Terraform"
   }
+}
+
+################### prefix tag ##############
+variable "prefix" {
+  type        = string
+  description = "env prefix for name tag"
+  default     = ""
 }

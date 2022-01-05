@@ -3,12 +3,6 @@ variable "vpc_cidr" {
   description = "VPC cidr block"
   type        = string
 }
-
-variable "newbits" {
-  description = "newbits for subnets, default is 8"
-  type        = number
-  default     = 8
-}
 variable "enable_dns_hostnames" {
   description = "Enable dns hostnames."
   default     = true
@@ -19,15 +13,18 @@ variable "enable_dns_support" {
   default     = true
   type        = bool
 }
-variable "public_subnet_count" {
-  type        = number
-  description = "Number of public subnets."
-  default     = 1
+variable "azs" {
+  type        = list(string)
+  description = "Availability zones"
 }
-variable "private_subnet_count" {
-  type        = number
-  description = "Number of private subnets."
-  default     = 1
+variable "public_subnet_cidrs" {
+  type        = list(string)
+  description = "cidr block of public subnets."
+
+}
+variable "private_subnet_cidrs" {
+  type        = list(string)
+  description = "cidr of private subnets."
 }
 
 ########################## Tags ###########################
@@ -38,3 +35,11 @@ variable "tags" {
     ManagedBy = "Terraform"
   }
 }
+
+################### prefix tag ##############
+variable "prefix" {
+  type        = string
+  description = "env prefix for name tag"
+  default     = ""
+}
+
