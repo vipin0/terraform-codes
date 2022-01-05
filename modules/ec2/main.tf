@@ -40,7 +40,7 @@ resource "aws_security_group" "instance_sg" {
   tags = merge(
     var.tags,
     {
-      "Name" : "${var.prefix}InstanceSecurityGroup"
+      "Name" : "${var.tag_prefix}InstanceSecurityGroup"
     }
   )
 }
@@ -81,7 +81,7 @@ resource "aws_launch_template" "launch_template" {
     tags = merge(
       var.tags,
       {
-        "Name" : "${var.prefix}ASGInstance"
+        "Name" : "${var.tag_prefix}ASGInstance"
       }
     )
   }
@@ -91,7 +91,7 @@ resource "aws_launch_template" "launch_template" {
   tags = merge(
     var.tags,
     {
-      "Name" : "${var.prefix}LaunchTemplate"
+      "Name" : "${var.tag_prefix}LaunchTemplate"
     }
   )
 
@@ -121,7 +121,7 @@ resource "aws_autoscaling_group" "asg" {
 
   tag {
     key                 = "Name"
-    value               = "${var.prefix}appserver"
+    value               = "${var.tag_prefix}appserver"
     propagate_at_launch = true
   }
   dynamic "tag" {

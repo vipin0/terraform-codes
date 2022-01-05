@@ -29,9 +29,9 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | Name of Application load balancer. | `string` | n/a | yes |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | env prefix for name tag | `string` | `""` | no |
 | <a name="input_security_group_name"></a> [security\_group\_name](#input\_security\_group\_name) | ALB SG name. | `string` | `"alb-security-group"` | no |
 | <a name="input_subnets_ids"></a> [subnets\_ids](#input\_subnets\_ids) | IDs of subnets for ALB. | `list(string)` | n/a | yes |
+| <a name="input_tag_prefix"></a> [tag\_prefix](#input\_tag\_prefix) | env tag\_prefix for name tag | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tag for the resources. | `map(any)` | <pre>{<br>  "ManagedBy": "Terraform"<br>}</pre> | no |
 | <a name="input_target_group_name"></a> [target\_group\_name](#input\_target\_group\_name) | target group name. | `string` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | VPC id for TG. | `string` | n/a | yes |

@@ -8,7 +8,7 @@ resource "aws_db_subnet_group" "db_subnet_group" {
   tags = merge(
     var.tags,
     {
-      "Name" : "${var.prefix}DatabaseSubnetGroup"
+      "Name" : "${var.tag_prefix}DatabaseSubnetGroup"
     }
   )
 }
@@ -33,7 +33,7 @@ resource "aws_db_instance" "my_rds" {
   tags = merge(
     var.tags,
     {
-      "Name" : "${var.prefix}RDSDatabase"
+      "Name" : "${var.tag_prefix}RDSDatabase"
     }
   )
 }
@@ -58,7 +58,7 @@ resource "aws_security_group" "db_sg" {
   tags = merge(
     var.tags,
     {
-      "Name" : "${var.prefix}DatabaseSecurityGroup"
+      "Name" : "${var.tag_prefix}DatabaseSecurityGroup"
     }
   )
 }

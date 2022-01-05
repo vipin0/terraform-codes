@@ -40,9 +40,9 @@ No modules.
 | <a name="input_key_name"></a> [key\_name](#input\_key\_name) | key for the instance to SSH | `string` | n/a | yes |
 | <a name="input_max_size"></a> [max\_size](#input\_max\_size) | ASG max size | `number` | n/a | yes |
 | <a name="input_min_size"></a> [min\_size](#input\_min\_size) | ASG max size | `number` | n/a | yes |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | env prefix for name tag | `string` | `""` | no |
 | <a name="input_security_group_name"></a> [security\_group\_name](#input\_security\_group\_name) | Name of security group for EC2 istance. | `string` | `"instance-security-group"` | no |
 | <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | subnet ids in which instances are to be launched. | `list(string)` | n/a | yes |
+| <a name="input_tag_prefix"></a> [tag\_prefix](#input\_tag\_prefix) | env tag\_prefix for name tag | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tag for the resources. | `map(any)` | <pre>{<br>  "ManagedBy": "Terraform"<br>}</pre> | no |
 | <a name="input_user_data"></a> [user\_data](#input\_user\_data) | user-data for ec2. | `string` | `""` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | VPC id of security group | `string` | n/a | yes |

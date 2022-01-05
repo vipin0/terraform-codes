@@ -37,9 +37,9 @@ No modules.
 | <a name="input_azs"></a> [azs](#input\_azs) | Availability zones | `list(string)` | n/a | yes |
 | <a name="input_enable_dns_hostnames"></a> [enable\_dns\_hostnames](#input\_enable\_dns\_hostnames) | Enable dns hostnames. | `bool` | `true` | no |
 | <a name="input_enable_dns_support"></a> [enable\_dns\_support](#input\_enable\_dns\_support) | Enable dns support. | `bool` | `true` | no |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | env prefix for name tag | `string` | `""` | no |
 | <a name="input_private_subnet_cidrs"></a> [private\_subnet\_cidrs](#input\_private\_subnet\_cidrs) | cidr of private subnets. | `list(string)` | n/a | yes |
 | <a name="input_public_subnet_cidrs"></a> [public\_subnet\_cidrs](#input\_public\_subnet\_cidrs) | cidr block of public subnets. | `list(string)` | n/a | yes |
+| <a name="input_tag_prefix"></a> [tag\_prefix](#input\_tag\_prefix) | env tag\_prefix for name tag | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tag for the resources. | `map(any)` | <pre>{<br>  "ManagedBy": "Terraform"<br>}</pre> | no |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | VPC cidr block | `string` | n/a | yes |
 

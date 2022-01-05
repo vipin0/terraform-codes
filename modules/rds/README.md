@@ -38,11 +38,11 @@ No modules.
 | <a name="input_identifier"></a> [identifier](#input\_identifier) | Identifier for RDS. | `string` | `"my-demo-rds"` | no |
 | <a name="input_multi_az"></a> [multi\_az](#input\_multi\_az) | Multi Az database | `bool` | `false` | no |
 | <a name="input_parameter_group_name"></a> [parameter\_group\_name](#input\_parameter\_group\_name) | Database parameter group name. | `string` | `"default.mysql5.7"` | no |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | env prefix for name tag | `string` | `""` | no |
 | <a name="input_protocol"></a> [protocol](#input\_protocol) | protocol | `string` | `"tcp"` | no |
 | <a name="input_security_group_name"></a> [security\_group\_name](#input\_security\_group\_name) | Security group name for RDS. | `string` | `"rds-security-group"` | no |
 | <a name="input_subnet_group_name"></a> [subnet\_group\_name](#input\_subnet\_group\_name) | Name of RDS subnet group. | `string` | `"demo-subnet-group"` | no |
 | <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | List of subnet ids for RDS subnet group. | `list(string)` | n/a | yes |
+| <a name="input_tag_prefix"></a> [tag\_prefix](#input\_tag\_prefix) | env tag\_prefix for name tag | `string` | `""` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tag for the resources. | `map(any)` | <pre>{<br>  "ManagedBy": "Terraform"<br>}</pre> | no |
 | <a name="input_to_port"></a> [to\_port](#input\_to\_port) | to\_port for DB. | `number` | `3306` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | VCP id for Security group. | `string` | n/a | yes |

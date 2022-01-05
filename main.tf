@@ -10,7 +10,7 @@ module "vpc" {
     environment = "training"
     Owner       = "vyadav@presidio.com"
   }
-  prefix = "vipin/"
+  tag_prefix = "vipin/"
 }
 
 
@@ -49,7 +49,7 @@ module "ec2" {
     environment = "training"
     Owner       = "vyadav@presidio.com"
   }
-  prefix = "vipin/"
+  tag_prefix = "vipin/"
 }
 
 ################### ALB module ###########################
@@ -63,7 +63,7 @@ module "alb" {
     environment = "training"
     Owner       = "vyadav@presidio.com"
   }
-  prefix = "vipin/"
+  tag_prefix = "vipin/"
 }
 
 ######################### RDS module #######################
@@ -85,6 +85,6 @@ module "rds" {
     environment = "training"
     Owner       = "vyadav@presidio.com"
   }
-  prefix = "vipin/"
+  tag_prefix = "vipin/"
 }
 

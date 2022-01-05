@@ -101,9 +101,9 @@ variable "tags" {
   }
 }
 
-################### prefix tag ##############
-variable "prefix" {
+################### tag_prefix tag ##############
+variable "tag_prefix" {
   type        = string
-  description = "env prefix for name tag"
+  description = "env tag_prefix for name tag"
   default     = ""
 }

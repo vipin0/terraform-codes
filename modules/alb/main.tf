@@ -12,7 +12,7 @@ resource "aws_lb" "my_alb" {
   tags = merge(
     var.tags,
     {
-      "Name" : "${var.prefix}LoadBalancer"
+      "Name" : "${var.tag_prefix}LoadBalancer"
     }
   )
 }
@@ -38,7 +38,7 @@ resource "aws_lb_target_group" "my_tg" {
   tags = merge(
     var.tags,
     {
-      "Name" : "${var.prefix}LoadBalancerTargetGroup"
+      "Name" : "${var.tag_prefix}LoadBalancerTargetGroup"
     }
   )
 }
@@ -102,7 +102,7 @@ resource "aws_security_group" "alb_sg" {
   tags = merge(
     var.tags,
     {
-      "Name" : "${var.prefix}LoadBalancerSecurityGroup"
+      "Name" : "${var.tag_prefix}LoadBalancerSecurityGroup"
     }
   )
 }
