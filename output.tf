@@ -8,12 +8,12 @@ output "alb_dns_name" {
 # output "public_subets" {
 #     value = aws_subnet.public_subnets[*]
 # }
-/*
+
 output "rds_endpoint" {
   description = "RDS endpoint address."
   value = module.rds.rds_endpoint
 }
-*/
+
 
 /*
 output "public_subnets_cidrs" {

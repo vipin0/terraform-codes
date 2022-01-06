@@ -29,7 +29,7 @@ variable "user_data" {
 variable "asg_name" {
   type        = string
   description = "ASG name"
-  default     = "vipinASG"
+  default     = "demoASG"
 }
 
 variable "max_size" {

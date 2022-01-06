@@ -33,17 +33,16 @@ module "ec2" {
   alb_target_group_arn        = module.alb.aws_lb_target_group_arn
   user_data                   = <<EOF
                 #! /bin/bash
-                sudo yum update
-                sudo yum install -y httpd mysql
-                sudo amazon-linux-extras install -y php7.2 
+                sudo yum update -y
+                sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+                sudo yum install -y httpd mariadb-server git
                 sudo systemctl start httpd
                 sudo systemctl enable httpd
-                sudo echo "<h1>Deployed via Terraform</h1><h2>served by $(hostname)</h2>" > /var/www/html/index.html
-                #sudo echo DB_HOST="module.rds.rds_endpoint" >> /etc/environment
-                #sudo echo DB_NAME=${var.db_name} >> /etc/environment
-                #sudo echo DB_USERNAME=${var.db_username} >> /etc/environment
-                #sudo echo DB_PASSWORD=${var.db_password} >> /etc/environment
-	            EOF
+                # sudo echo "<h1>Deployed by abhishek</h1>" > /var/www/html/index.html
+                git clone https://github.com/vipin0/php-db-connection.git /tmp/php
+                sudo mv /tmp/php/index.php /var/www/html/
+                sudo systemctl restart httpd
+                EOF
 
   tags = {
     environment = "training"
