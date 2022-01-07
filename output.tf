@@ -11,7 +11,7 @@ output "alb_dns_name" {
 
 output "rds_endpoint" {
   description = "RDS endpoint address."
-  value = module.rds.rds_endpoint
+  value       = module.rds.rds_endpoint
 }
 
 

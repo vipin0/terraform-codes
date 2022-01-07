@@ -17,15 +17,15 @@ variable "vpc_cidr" {
   default     = "10.0.0.0/16"
 }
 variable "azs" {
-  type = list(string)
+  type        = list(string)
   description = "List of availability zones."
 }
 variable "public_subnet_cidrs" {
-  type = list(string)
+  type        = list(string)
   description = "cidr blocks of public subnets."
 }
 variable "private_subnet_cidrs" {
-  type = list(string)
+  type        = list(string)
   description = "cidr blocks of private subnets."
 }
 
@@ -36,63 +36,63 @@ variable "key_name" {
 }
 
 variable "instance_type" {
-  type = string
+  type        = string
   description = "Instance Type to launch"
 }
 variable "min_size" {
-  type = string
+  type        = string
   description = "Min number of instanes for ASG"
 }
 variable "max_size" {
-  type = string
+  type        = string
   description = "Max number of instanes for ASG"
 }
 variable "desired_capacity" {
-  type = string
+  type        = string
   description = "Desired number of instanes for ASG"
 }
 
 variable "associate_public_ip_address" {
-  type = string
+  type        = string
   description = "associate public ip address to the instances"
 }
 variable "instance_ssh_cidrs" {
-  type = list(string)
+  type        = list(string)
   description = "instance ssh cidrs"
 }
 variable "instance_ingress_ports" {
-  type = list(string)
+  type        = list(string)
   description = "instance ingress ports"
 }
 variable "user_data" {
-  type = string
+  type        = string
   description = "User data for instance"
 }
 
 ############# ALB module ##############
 variable "name" {
-  type = string
+  type        = string
   description = "ALB name"
 }
 variable "target_group_name" {
-  type = string
+  type        = string
   description = "target group name"
 }
 # ---------rds config ------------------
 variable "subnet_group_name" {
-  type = string
+  type        = string
   description = "rds subnet group name"
 }
 variable "identifier" {
-  type = string
+  type        = string
   description = "database identidier"
 }
 variable "db_instance_class" {
-  type = string
+  type        = string
   description = "db instance class"
 }
 variable "security_group_name" {
-  type = string
+  type        = string
   description = "db instance class"
 }
 variable "db_name" {
@@ -121,7 +121,7 @@ variable "additonal_tags" {
 }
 
 variable "tag_prefix" {
-  type = string
+  type        = string
   description = "Prefix for name tag of the resources."
-  default = ""
+  default     = ""
 }

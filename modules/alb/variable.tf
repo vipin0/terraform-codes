@@ -25,6 +25,48 @@ variable "security_group_name" {
   default     = "alb-security-group"
 }
 
+variable "health_check_path" {
+  type        = string
+  description = "health check path"
+  default     = "/"
+}
+variable "health_check_port" {
+  type        = number
+  description = "health check port"
+  default     = 80
+}
+variable "health_check_protocol" {
+  type        = string
+  description = "health check protocol"
+  default     = "HTTP"
+}
+variable "health_check_timeout" {
+  type        = number
+  description = "health check timeout"
+  default     = 5
+}
+variable "health_check_interval" {
+  type        = number
+  description = "health check interval"
+  default     = 30
+}
+variable "health_check_matcher" {
+  type        = string
+  description = "health check matcher"
+  default     = "200"
+}
+variable "healthy_threshold" {
+  type        = number
+  description = "healthy threshold"
+  default     = 5
+}
+variable "unhealthy_threshold" {
+  type        = number
+  description = "unhealthy threshold"
+  default     = 2
+}
+
+
 ########################## Tags ###########################
 variable "tags" {
   description = "Tag for the resources."

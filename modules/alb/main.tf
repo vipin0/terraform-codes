@@ -25,16 +25,16 @@ resource "aws_lb_target_group" "my_tg" {
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc_id
-  # health_check {
-  #   path                = "/index.html"
-  #   port                = 80
-  #   healthy_threshold   = 3
-  #   unhealthy_threshold = 2
-  #   protocol            = "HTTP"
-  #   timeout             = 10
-  #   interval            = 20
-  #   matcher             = "200" # has to be HTTP 200 or fails
-  # }
+  health_check {
+    path                = var.health_check_path
+    port                = var.health_check_port
+    healthy_threshold   = var.healthy_threshold
+    unhealthy_threshold = var.unhealthy_threshold
+    protocol            = var.health_check_protocol
+    timeout             = var.health_check_timeout
+    interval            = var.health_check_interval
+    matcher             = var.health_check_matcher # has to be HTTP 200 or fails
+  }
   tags = merge(
     var.tags,
     {
@@ -86,12 +86,12 @@ resource "aws_security_group" "alb_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  # ingress {
-  #   from_port   = 443
-  #   to_port     = 443
-  #   protocol    = "tcp"
-  #   cidr_blocks = ["0.0.0.0/0"]
-  # }
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   egress {
     from_port        = 0
     to_port          = 0
