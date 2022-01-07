@@ -30,7 +30,7 @@ No modules.
 | <a name="input_alb_security_group_id"></a> [alb\_security\_group\_id](#input\_alb\_security\_group\_id) | ALB security group id | `string` | n/a | yes |
 | <a name="input_alb_target_group_arn"></a> [alb\_target\_group\_arn](#input\_alb\_target\_group\_arn) | alb target group arn | `string` | n/a | yes |
 | <a name="input_ami_id"></a> [ami\_id](#input\_ami\_id) | AMI id for the instance. | `string` | n/a | yes |
-| <a name="input_asg_name"></a> [asg\_name](#input\_asg\_name) | ASG name | `string` | `"vipinASG"` | no |
+| <a name="input_asg_name"></a> [asg\_name](#input\_asg\_name) | ASG name | `string` | `"demoASG"` | no |
 | <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | Assign public IP address to instances | `bool` | `false` | no |
 | <a name="input_desired_capacity"></a> [desired\_capacity](#input\_desired\_capacity) | ASG desired\_capacity | `number` | n/a | yes |
 | <a name="input_health_check_type"></a> [health\_check\_type](#input\_health\_check\_type) | asg health check type | `string` | `"ELB"` | no |
