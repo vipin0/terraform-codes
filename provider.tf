@@ -11,4 +11,10 @@ provider "aws" {
   # Configuration options
   profile = var.credential_profile
   region  = var.region
+  default_tags {
+    tags = {
+      "Owner"       = "vyadav@presidio.com"
+      "environment" = "training"
+    }
+  }
 }
